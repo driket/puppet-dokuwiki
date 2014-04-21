@@ -1,0 +1,13 @@
+# users.auth.php
+# <?php exit()?>
+# Don't modify the lines above
+#
+# Userfile
+#
+# Format:
+#
+# login:passwordhash:Real Name:email:groups,comma,seperated
+
+<% for user in @users %>
+<%= user['login'] -%>:<%= user['passwordhash'] -%>:<%= user['realname'] -%>:<%= user['email'] -%>:<%= user['groups'] -%>
+<% end %>

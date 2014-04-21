@@ -1,0 +1,21 @@
+<VirtualHost *:80>
+        ServerAdmin <%= @admin_contact %>
+
+        DocumentRoot <%= @app_path %>
+
+        <Directory <%= @app_path %>/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride all
+                Order allow,deny
+                allow from all
+        </Directory>
+
+        ErrorLog /var/log/apache2/dokuwiki_error.log
+
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+
+        CustomLog /var/log/apache2/dokuwiki_access.log combined
+
+</VirtualHost>
